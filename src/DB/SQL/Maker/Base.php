@@ -17,6 +17,7 @@ abstract class Base
         if (!isset($conf['tableName']) || empty($conf['tableName'])) {
             throw new Exception('need conf: tableName');
         }
+        $this->conf = $conf;
         $this->db = $dbConnection;
     }
 
