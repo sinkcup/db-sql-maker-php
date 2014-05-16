@@ -1,0 +1,6 @@
+{
+    "minimum-stability": "dev",
+    "require": {
+        "sinkcup/db-sql-maker-php": "*"
+    }
+}
