@@ -139,6 +139,8 @@ abstract class Base
                         $tmp[] = $this->quote($one);
                     }
                     $part_1 =  $this->quoteIdentifier($key) . ' IN (' . implode(',', $tmp) . ') ';
+                } elseif (is_null($value)) {
+                    $part_1 = $this->quoteIdentifier($key) . ' IS NULL ';
                 } else {
                     $part_1 = $this->quoteIdentifier($key) . $math . $this->quote($value);
                 }
