@@ -287,7 +287,9 @@ abstract class Base
             $sql = 'SELECT COUNT(*) as cnt';
         }
         $sql .= ' FROM ' . $this->quoteTableName();
-        $sql .= $this->implodeToWhere($input['where']);
+        if (isset($input['where']) && !empty($input['where'])) {
+            $sql .= $this->implodeToWhere($input['where']);
+        }
         if (isset($input['groupBy']) && !empty($input['groupBy'])) {
             $sql .= ' GROUP BY ' . $this->implodeToColumn($input['groupBy']);
         }
